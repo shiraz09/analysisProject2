@@ -1,70 +1,19 @@
-# LU Decomposition and Matrix Operations
+# README
 
-This Python script provides a collection of functions to perform LU decomposition with pivoting and various matrix operations, including finding the inverse of a matrix and solving a linear system using LU decomposition.
+## LU Decomposition and Matrix Operations
 
-## Functions
+This Python script provides a collection of functions to perform LU decomposition with pivoting and various matrix operations, including finding the inverse of a matrix and solving a linear system using LU decomposition. The script includes the following functions:
 
-### `print_matrix(matrix)`
-Prints a matrix in a readable format.
+1. `print_matrix(matrix)`: Prints a matrix in a readable format.
+2. `swap_rows(matrix, i, j)`: Swaps rows `i` and `j` in a matrix.
+3. `lu_decomposition(matrix)`: Performs LU decomposition with pivoting. Returns the lower triangular matrix `L`, upper triangular matrix `U`, and permutation matrix `P`.
+4. `multiply_matrix(matrix1, matrix2)`: Multiplies two matrices.
+5. `solve_with_lu_decomposition(L, U, P, b)`: Solves the linear system `Ax = b` using LU decomposition and pivoting.
+6. `find_inverse(matrix)`: Finds the inverse of a matrix using LU decomposition.
 
-**Parameters:**
-- `matrix`: List of lists representing the matrix.
-
-### `swap_rows(matrix, i, j)`
-Swaps rows `i` and `j` in a matrix.
-
-**Parameters:**
-- `matrix`: List of lists representing the matrix.
-- `i`: Index of the first row.
-- `j`: Index of the second row.
-
-### `lu_decomposition(matrix)`
-Performs LU decomposition with pivoting. Returns the lower triangular matrix `L`, upper triangular matrix `U`, and permutation matrix `P`.
-
-**Parameters:**
-- `matrix`: List of lists representing the matrix to decompose.
-
-**Returns:**
-- `L`: Lower triangular matrix.
-- `U`: Upper triangular matrix.
-- `P`: Permutation matrix.
-
-### `multiply_matrix(matrix1, matrix2)`
-Multiplies two matrices.
-
-**Parameters:**
-- `matrix1`: First matrix.
-- `matrix2`: Second matrix.
-
-**Returns:**
-- `result`: Product of the two matrices.
-
-### `solve_with_lu_decomposition(L, U, P, b)`
-Solves the linear system `Ax = b` using LU decomposition and pivoting.
-
-**Parameters:**
-- `L`: Lower triangular matrix.
-- `U`: Upper triangular matrix.
-- `P`: Permutation matrix.
-- `b`: Right-hand side vector.
-
-**Returns:**
-- `x`: Solution vector.
-
-### `find_inverse(matrix)`
-Finds the inverse of a matrix using LU decomposition.
-
-**Parameters:**
-- `matrix`: Matrix to invert.
-
-**Returns:**
-- `inverse`: Inverse of the matrix.
-
-## Usage
+### Usage
 
 The script includes a `main` block that demonstrates the functionality of the provided functions.
-
-### Example
 
 1. **Find the Inverse of a Matrix:**
    ```python
@@ -93,30 +42,29 @@ The script includes a `main` block that demonstrates the functionality of the pr
    print_matrix(x)
    ```
 
-### Full Example Code
+### Functions
 
-```python
-if __name__ == '__main__':
-    A = [[1, 4, -3], [-2, 1, 5], [3, 2, 1]]
-    b = [30, 60, 50]
+#### `print_matrix(matrix)`
+Prints a matrix in a readable format.
 
-    # Find the inverse of A
-    inverse_A = find_inverse(A)
-    print("Inverse matrix A^-1:")
-    print_matrix(inverse_A)
-    print()
+**Parameters:**
+- `matrix`: List of lists representing the matrix.
 
-    # Perform LU decomposition of A
-    L, U, P = lu_decomposition(A)
-    print("Lower triangular matrix L:")
-    print_matrix(L)
-    print("Upper triangular matrix U:")
-    print_matrix(U)
-    print("Permutation matrix P:")
-    print_matrix(P)
-    print()
+#### `swap_rows(matrix, i, j)`
+Swaps rows `i` and `j` in a matrix.
 
-    # Solve the linear system Ax = b using LU decomposition
+**Parameters:**
+- `matrix`: List of lists representing the matrix.
+- `i`: Index of the first row.
+- `j`: Index of the second row.
+
+#### `lu_decomposition(matrix)`
+Performs LU decomposition with pivoting. Returns the lower triangular matrix `L`, upper triangular matrix `U`, and permutation matrix `P`.
+
+**Parameters:**
+- `matrix`: List of lists representing the matrix to decompose.
+
+
     x = solve_with_lu_decomposition(L, U, P, b)
     print("Solution vector x:")
     print_matrix(x)
